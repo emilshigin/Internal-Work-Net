@@ -28,7 +28,7 @@ Route::post('login', LoginController::class)->name('login.attempt');
 
 
 Route::middleware(['auth'])->group(function () {        
-    Route::view('register', 'register')->name('register');
+    Route::view('register', 'auth.register')->name('register');
     Route::post('register', RegisterController::class)->name('register.store');
     
     Route::view('/', 'dashboard')->name('dashboard');
