@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Session;
 Route::fallback(function () {return redirect('/');});
 
 Route::get('login',[LoginController::class,'index'])->name('login');
-Route::post('login', LoginController::class)->name('login.attempt');
+Route::post('login', LoginController::class)->middleware('throttle:10')->name('login.attempt');
 
 
 Route::middleware(['auth'])->group(function () {        
