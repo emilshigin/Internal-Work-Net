@@ -16,9 +16,10 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
          User::factory()->create([
-            'name' => 'top dao',
-            'email' => 'top@top.com',
-            'password' => 'top'
+            'name' => 'Emil Shigin',
+            'username' => 'emilshigin',
+            'email' => 'emil@micromedinc.com',
+            'password' => 'test123'
         ]);
     }
 }
