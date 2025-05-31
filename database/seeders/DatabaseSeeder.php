@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-         User::factory()->create([
-            'name' => 'Emil Shigin',
-            'username' => 'emilshigin',
-            'email' => 'emil@micromedinc.com',
-            'password' => 'test123'
-        ]);
+        //  User::factory()->create([
+        //     'name' => 'ADMIN',
+        //     'username' => 'admin',
+        //     'email' => 'admin@micromedinc.com',
+        //     'password' => 'admin!?'
+        // ]);
     }
 }
