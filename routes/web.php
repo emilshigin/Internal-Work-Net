@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::view('register', 'auth.register')->name('register');
     Route::post('register', RegisterController::class)->name('register.store');
     
-    Route::view('/', 'dashboard')->name('dashboard');
+    Route::view('/', 'app.dashboard')->name('dashboard');
     
     Route::post('logout', function () {
         Auth::guard('web')->logout();
