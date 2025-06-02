@@ -8,7 +8,7 @@
      @vite('resources/css/app.css')
     <title>{{ucfirst($tabTitle)}} | worknet</title>
 </head>
-<body @if ($bodyClass)class="{{$bodyClass}}"@endif>  
+<body class="bg-blue-50 {{ $bodyClass ?? '' }}">  
     {{$slot}}
 </body>
 </html>
