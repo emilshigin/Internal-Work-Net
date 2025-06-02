@@ -1,4 +1,4 @@
-<x-base-layout tabTitle='login' bodyClass='min-h-screen flex items-center justify-center bg-blue-50'>
+<x-base-layout tabTitle='login' bodyClass='min-h-screen flex items-center justify-center'>
     <div class="w-full max-w-md p-8 bg-white rounded-lg shadow">
 
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
