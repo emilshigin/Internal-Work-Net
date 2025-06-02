@@ -1,8 +1,5 @@
-<div>
-    hello {{ Auth::user()->name }}
-
-    <form action="{{ route('logout') }}" method="post">
-        @csrf
-        <x-button type="submit" text='Logout'/>
-    </form>
-</div>
+<x-app-layout tabTitle='dashboard' bodyClass=''>
+    <div>
+        hello {{ Auth::user()->name }}   
+    </div>
+</x-app-layout>
