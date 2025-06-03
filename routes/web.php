@@ -15,6 +15,7 @@
 // require __DIR__.'/auth.php';
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataManagementController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +33,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('register', RegisterController::class)->name('register.store');
     
     Route::view('/', 'app.dashboard')->name('dashboard');
+
+    Route::get('/manage_data', [DataManagementController::class, 'index'])->name('data-management');
     
     Route::post('logout', function () {
         Auth::guard('web')->logout();
