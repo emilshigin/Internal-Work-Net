@@ -8,12 +8,14 @@ php artisan view:clear
 ```
 
 ### Database
-* php artisan migrate:fresh --seed
+* ```php artisan migrate:fresh --seed```
+* run a specific seeder:
+``` php artisan db:seed --class=UserSeeder ```
 ### Clear Cache
-* php artisan cache:clear
-* php artisan config:clear
-* php artisan config:cache
-* php artisan route:clear
-* php artisan view:clear
-* php artisan event:clear
+* ```php artisan cache:clear```
+* ```php artisan config:clear```
+* ```php artisan config:cache```
+* ```php artisan route:clear```
+* ```php artisan view:clear```
+* ```php artisan event:clear```
 
