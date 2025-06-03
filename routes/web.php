@@ -14,6 +14,7 @@
 // require __DIR__.'/settings.php';
 // require __DIR__.'/auth.php';
 
+use App\Http\Controllers\CustomerSupportController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataManagementController;
 use App\Http\Controllers\RegisterController;
@@ -34,8 +35,11 @@ Route::middleware(['auth'])->group(function () {
     
     Route::view('/', 'app.dashboard')->name('dashboard');
 
+    Route::get('/customer_support', [CustomerSupportController::class, 'index'])->name('support');
     Route::get('/manage_data', [DataManagementController::class, 'index'])->name('data-management');
     
+
+
     Route::post('logout', function () {
         Auth::guard('web')->logout();
         Session::invalidate();
