@@ -1,8 +1,8 @@
 <aside class="w-44 bg-white shadow-md p-4 hidden md:flex flex-col">
 <h2 class="text-xl font-bold mb-6">Dashboard</h2>
 <nav class="space-y-2">
-    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-200 text-gray-700">Home</a>
-    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-200 text-gray-700">Analytics</a>
+    <a href="/" class="block py-2 px-3 rounded hover:bg-gray-200 text-gray-700">Dashboard</a>
+    <a href="/manage_data" class="block py-2 px-3 rounded hover:bg-gray-200 text-gray-700">Manage Data</a>
     <a href="#" class="block py-2 px-3 rounded hover:bg-gray-200 text-gray-700">Settings</a>
 </nav>
 
