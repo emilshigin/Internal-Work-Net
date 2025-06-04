@@ -1,9 +1,11 @@
-@props(['name' => 'need name', 'type'=>'text', 'isRequired'=>'true', 'showLabel'=>'true', 'showError'=>'true'])
+@props(['name' => 'need name', 'type'=>'text','isLiveSearch' => 'false', 'isRequired'=>'true', 'showLabel'=>'true', 'showError'=>'true'])
 
 @php
     $showLabel = filter_var($showLabel, FILTER_VALIDATE_BOOLEAN);
     $showError = filter_var($showError, FILTER_VALIDATE_BOOLEAN);
     $isRequired = filter_var($isRequired, FILTER_VALIDATE_BOOLEAN);
+    $isLiveSearch = filter_var($isLiveSearch, FILTER_VALIDATE_BOOLEAN);
+
 @endphp
 
 @if ($showLabel)
@@ -12,6 +14,7 @@
 <input 
     type="{{$type}}" 
     name='{{$name}}' 
+    @if($isLiveSearch) wire:model.live.debounce.300ms="query" @endif
     @if ($isRequired) required @endif 
     placeholder='{{ucfirst($name)}}' 
     class="
