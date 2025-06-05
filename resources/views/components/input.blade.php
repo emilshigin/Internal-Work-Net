@@ -14,7 +14,7 @@
 <input 
     type="{{$type}}" 
     name='{{$name}}' 
-    @if($isLiveSearch) wire:model.live.debounce.300ms="query" @endif
+    @if($isLiveSearch) wire:model.live.debounce.200ms="query" @endif
     @if ($isRequired) required @endif 
     placeholder='{{ucfirst($name)}}' 
     class="
