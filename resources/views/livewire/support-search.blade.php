@@ -3,7 +3,7 @@
 
     <ul class=" mt-2">
         @foreach($buyers as $buyer)
-            <li>{{ $buyer->name }}</li>
+            <li>Customer: {{ $buyer->name }}</li>
         @endforeach
     </ul>
 </div>
