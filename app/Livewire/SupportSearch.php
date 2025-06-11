@@ -17,6 +17,8 @@ class SupportSearch extends Component
         if(!empty($this->query)){
             $buyers = Buyer::where('name','like',"%{$this->query}%")
                         ->orWhere('email','like',"%{$this->query}%")
+                        ->orWhere('phone','like',"%{$this->query}%")
+                        ->limit(50)
                         ->get();
         }
 
