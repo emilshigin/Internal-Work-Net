@@ -14,7 +14,7 @@
 <input 
     type="{{$type}}" 
     name='{{$name}}' 
-    @if($isLiveSearch) wire:model.live.debounce.200ms="query" @endif
+    @if($isLiveSearch) wire:model.live.debounce.350ms="query" @endif
     @if ($isRequired) required @endif 
     placeholder='{{ucfirst($name)}}' 
     class="
@@ -25,6 +25,9 @@
         placeholder:text-gray-400 focus:outline-2 
         focus:outline-offset-2 focus:outline-blue-900
     "/>
+    <div wire:loading>
+        🔄 Searching...
+    </div>
 
 @if ($showError)
     @error($name)
