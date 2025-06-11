@@ -23,11 +23,11 @@ class DatabaseSeeder extends Seeder
             ProductUnitSeeder::class,
         ]);
 
-        //  User::factory()->create([
-        //     'name' => 'ADMIN',
-        //     'username' => 'admin',
-        //     'email' => 'admin@micromedinc.com',
-        //     'password' => 'admin!?'
-        // ]);
+         User::factory()->create([
+            'name' => 'ADMIN',
+            'username' => 'admin',
+            'email' => 'admin@micromedinc.com',
+            'password' => 'admin!?'
+        ]);
     }
 }
