@@ -7,8 +7,14 @@
     
     <ul class="mt-2 overflow-auto max-h-144">
         @forelse($buyers as $buyer)
-            <li wire:key="buyer-{{ $buyer->id }}">
-                {{ $buyer->name }} -
+            <li  
+                wire:key="buyer-{{ $buyer->id }}" 
+                wire:click="select({{$buyer->id}})"
+                class="
+                  p-1 mt-0.5 
+                 {{ $selectedId === $buyer->id ? ' bg-amber-200 border-accent' : 'bg-white' }}
+                ">
+                    <b>{{ $buyer->name }}</b>
                 @if(Str::contains(strtolower($buyer->email), strtolower($query)))
                     {{ $buyer->email }}
                 @elseif(Str::contains($buyer->phone, $query))
