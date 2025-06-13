@@ -15,13 +15,13 @@
                  {{ $selectedId === $buyer->id ? ' bg-amber-200 border-accent' : 'bg-white' }}
                 ">
                     <b>{{ $buyer->name }}</b>
-                @if(Str::contains(strtolower($buyer->email), strtolower($query)))
-                    {{ $buyer->email }}
-                @elseif(Str::contains($buyer->phone, $query))
-                    {{ $buyer->phone }}
-                @else
-                    {{ $buyer->email ?? $buyer->phone }}
-                @endif
+                    @if(Str::contains(strtolower($buyer->email), strtolower($query)))
+                        <p> {{ $buyer->email }} </p>
+                    @elseif(Str::contains($buyer->phone, $query))
+                        <p> {{ $buyer->phone }} </p>
+                    @else
+                        <p> {{ $buyer->email ?? $buyer->phone }}</p>
+                    @endif
             </li>
         @empty
             <li class="text-gray-500 italic ml-20">No matching buyers found.</li>
