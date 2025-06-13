@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Office;
+use Database\Factories\OfficeFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +14,14 @@ class OfficeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $count = 25000;
+        $chunkSize = 1000;
+
+        $office = OfficeFactory::new()->count($count)->make();
+        foreach($office->chunk($chunkSize) as $chunk){
+            $data = $chunk->toArray();
+            Office::insert($data);
+        }
+
     }
 }
