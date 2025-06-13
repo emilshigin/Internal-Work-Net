@@ -25,7 +25,7 @@
         placeholder:text-gray-400 focus:outline-2 
         focus:outline-offset-2 focus:outline-blue-900
     "/>
-    <div wire:loading>
+    <div wire:loading  wire:target="query" >
         🔄 Searching...
     </div>
 
