@@ -5,7 +5,7 @@
 <div>
     <x-input name='Name | Serial Number | Email | Phone' showLabel='false' isLiveSearch='true' />
     
-    <ul class="mt-2">
+    <ul class="mt-2 overflow-auto max-h-144">
         @forelse($buyers as $buyer)
             <li wire:key="buyer-{{ $buyer->id }}">
                 {{ $buyer->name }} -
