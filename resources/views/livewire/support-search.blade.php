@@ -3,7 +3,7 @@
 @endphp
 
 <div>
-    <x-input name='search | Name | Serial Number | Email | Phone' showLabel='false' isLiveSearch='true' />
+    <x-input name='Name | Serial Number | Email | Phone' showLabel='false' isLiveSearch='true' />
     
     <ul class="mt-2">
         @forelse($buyers as $buyer)
