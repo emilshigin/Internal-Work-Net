@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('offices', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('buyer_id')->constrained('buyers')->onDelete('set null');
+            $table->foreignId('buyer_id')->nullable()->constrained('buyers')->onDelete('set null');
             $table->string('office_name')->unique();
             $table->timestamps();
         });
