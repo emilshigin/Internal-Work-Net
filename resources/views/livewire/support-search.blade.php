@@ -5,8 +5,8 @@
 <div>
     <x-input name='Name | Serial Number | Email | Phone' showLabel='false' isLiveSearch='true' />
     
-    <ul class="mt-2 overflow-auto max-h-144">
-        @forelse($buyers as $buyer)
+    <ul class="mt-2 overflow-auto max-h-150 outline-1 -outline-offset-1 outline-gray-300">
+        @foreach($buyers as $buyer)
             <li  
                 wire:key="buyer-{{ $buyer->id }}" 
                 wire:click="select({{$buyer->id}})"
@@ -23,8 +23,32 @@
                         <p> {{ $buyer->email ?? $buyer->phone }}</p>
                     @endif
             </li>
-        @empty
-            <li class="text-gray-500 italic ml-20">No matching buyers found.</li>
-        @endforelse
+        @endforeach
+        
+        @foreach($offices as $office)
+        <li
+            wire:click="select({{$office->buyer_id}})"
+            class="
+                p-1 mt-0.5 
+                {{ $selectedId === $office->buyer_id ? ' bg-amber-200 border-accent' : 'bg-white' }}
+                ">
+                <b>{{ $office->office_name }}</b>
+                <p>{{ $office->buyer->name }}</p>
+        </li>
+        @endforeach
+
+        @foreach($productUnit as $unit)
+        <li
+            wire:click="select({{$unit->currentOffice?->buyer_id}})"
+            class="
+                p-1 mt-0.5 
+                {{ $selectedId === $unit->currentOffice?->buyer_id ? ' bg-amber-200 border-accent' : 'bg-white' }}
+                ">
+                <b>{{ $unit->currentOffice?->buyer->name }}</b>
+                <p>SN {{$unit->serial_number}}</p>
+            </li>
+        @endforeach
+
+
     </ul>
 </div>
