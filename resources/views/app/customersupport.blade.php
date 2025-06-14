@@ -1,5 +1,5 @@
 <x-app-layout tabTitle='Customer Support' bodyClass=''>
-    <div class="flex gap-4">
+    <div class="flex gap-3">
         <div class="w-1/4 max-w-md">
             @livewire('support-search')
         </div>

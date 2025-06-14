@@ -3,7 +3,7 @@
     <div class="flex min-h-screen">
     <x-nav/>
 
-     <main class="flex-1 p-6">
+     <main class="flex-1 p-3">
         {{$slot}}
      </main>
     </div>
