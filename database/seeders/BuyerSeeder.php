@@ -14,8 +14,8 @@ class BuyerSeeder extends Seeder
      */
     public function run(): void
     {   
-        $count = 20000; // Number of users to create
-        $chunkSize = 1000; // Chunk size for inserting records
+        $count = 200; // Number of users to create
+        $chunkSize = 100; // Chunk size for inserting records
 
         $users = BuyerFactory::new()->count($count)->make();
         foreach ($users->chunk($chunkSize) as $chunk) {
