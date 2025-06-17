@@ -2,10 +2,10 @@
     use Illuminate\Support\Str;
 @endphp
 
-<div>
+<div class=" bg-red-300 h-12/12">
     <x-input name='Name | Serial Number | Email | Phone' showLabel='false' isLiveSearch='true' />
     
-    <ul class="mt-2 overflow-auto max-h-150 outline-1 -outline-offset-1 outline-gray-300">
+    <ul class="mt-2 overflow-auto outline-1 -outline-offset-1 outline-gray-300">
         @foreach($buyers as $buyer)
             <li  
                 wire:key="buyer-{{ $buyer->id }}" 
