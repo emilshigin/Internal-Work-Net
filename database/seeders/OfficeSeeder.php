@@ -14,7 +14,7 @@ class OfficeSeeder extends Seeder
      */
     public function run(): void
     {
-        $count = 250;
+        $count = 350;
         $chunkSize = 100;
 
         $office = OfficeFactory::new()->count($count)->make();

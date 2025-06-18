@@ -16,11 +16,17 @@ class BuyerSeeder extends Seeder
     {   
         $count = 200; // Number of users to create
         $chunkSize = 100; // Chunk size for inserting records
+        $now = now();
 
-        $users = BuyerFactory::new()->count($count)->make();
-        foreach ($users->chunk($chunkSize) as $chunk) {
-                $data = $chunk->toArray();
-                Buyer::insert($data);
-            }
+        $buyers = Buyer::factory()->count($count)->make()->map(function ($buyer) use ($now) {
+            $arr = $buyer->toArray();
+            $arr['created_at'] = $now;
+            $arr['updated_at'] = $now;
+            return $arr;
+        });
+
+        foreach ($buyers->chunk($chunkSize) as $chunk) {
+            Buyer::insert($chunk->toArray());
+        }
     }
 }

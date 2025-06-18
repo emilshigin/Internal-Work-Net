@@ -18,7 +18,7 @@ class OfficeFactory extends Factory
     public function definition(): array
     {
         return [
-            'buyer_id' => Buyer::factory(),
+            'buyer_id' => Buyer::inRandomOrder()->first()->id,
             'office_name' => $this->faker->unique()->company . ' Office',
         ];
     }
