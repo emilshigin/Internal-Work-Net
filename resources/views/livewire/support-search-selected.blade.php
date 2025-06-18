@@ -1,4 +1,4 @@
-<div class="bg-white h-12/12 py-2 px-3 block rounded outline-1 -outline-offset-1 outline-gray-300">
+<div class="bg-white h-12/12 py-2 px-3 block rounded-md outline-1 -outline-offset-1 outline-gray-300">
     @if($selectedId)
 
         {{-- Initial Buyer --}}
