@@ -31,7 +31,8 @@
 8. reboot Computer
 
 ## Errors You May incounter
-### 
+###  Inital
+* npm install
 
 ### No Directory
 ```Warning: require(../vendor/autoload.php): Failed to open stream: No such file or directory in ...public\index.php on line 13```
