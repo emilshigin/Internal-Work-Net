@@ -1,52 +1,38 @@
 @props(['officesWithSerials'])
 
 @foreach($officesWithSerials as $office => $serials)
-    <div class="block w-72 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-        <h3 class="mb-2 text-center text-2xl font-bold tracking-tight text-black">{{  $office }}</h3>
+  <div class="block w-72  bg-white p-6 rounded-outline">
+    <h3 class="mb-2 text-center text-2xl font-bold tracking-tight text-black">{{  $office }}</h3>
 
           <!-- Email -->
-  <div class="mb-2 flex items-center justify-between h-10">
-    <p class="font-normal text-gray-700 overflow-hidden w-auto rounded-md bg-gray-200 px-2 mr-3">email@email.comvxvxcvxcxvxvxv</p>
+    <div class="mb-2 flex items-center justify-between h-10">
+      <p class="font-normal bg-gray-200 text-gray-700 overflow-hidden w-auto px-2 mr-3 rounded-outline">email@email.comvxvxcvxcxvxvxv</p>
 
-    <div class="flex space-x-2">
-      <!-- Copy -->
-      <div>
-        <x-ui.copy-icon/>
-      </div>
-
-      <!-- Edit -->
-      <div>
-        <x-ui.edit-icon/>
+      <div class="flex space-x-2">
+        <x-ui.copy-icon/><!-- Copy -->
+        <x-ui.edit-icon/><!-- Edit -->
       </div>
     </div>
+
+    <!-- Phone -->
+    <div class="mb-2 flex items-center justify-between">
+      <p class="font-normal bg-gray-200 text-gray-700 overflow-hidden w-auto px-2 mr-3 rounded-outline">###-###-###</p>
+
+      <div class="flex space-x-2">
+        <x-ui.copy-icon/><!-- Copy -->
+        <x-ui.edit-icon/><!-- Edit -->
+      </div>
+    </div>
+
+
+      @if($serials)
+          <div class="mt-3 flex flex-wrap gap-1">
+              @foreach($serials as $sn)
+                  <p>{{ $sn }}</p>
+              @endforeach
+          </div>
+      @else
+          <p class="ml-4 text-gray-500">Office Has No Devices Attached</p>
+      @endif
   </div>
-
-  <!-- Phone -->
-  <div class="mb-2 flex items-center justify-between">
-    <p class="font-normal text-gray-700 overflow-hidden w-auto rounded-md bg-gray-200 px-2 mr-3">###-###-###</p>
-
-    <div class="flex space-x-2">
-      <!-- Copy -->
-      <div>
-        <x-ui.copy-icon/>
-      </div>
-
-      <!-- Edit -->
-      <div>
-        <x-ui.edit-icon/>
-      </div>
-    </div>
-  </div>
-
-
-        @if($serials)
-            <div class="mt-3 flex flex-wrap gap-1">
-                @foreach($serials as $sn)
-                    <p>{{ $sn }}</p>
-                @endforeach
-            </div>
-        @else
-            <p class="ml-4 text-gray-500">Office Has No Devices Attached</p>
-        @endif
-    </div>
 @endforeach
