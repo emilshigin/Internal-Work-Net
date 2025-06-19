@@ -6,7 +6,7 @@
 
           <!-- Email -->
   <div class="mb-2 flex items-center justify-between h-10">
-    <p class="font-normal text-gray-700 overflow-hidden w-32 rounded-md bg-gray-200 ">email@email.comvxvxcvxcxvxvxv</p>
+    <p class="font-normal text-gray-700 overflow-hidden w-auto rounded-md bg-gray-200 px-2 mr-3">email@email.comvxvxcvxcxvxvxv</p>
 
     <div class="flex space-x-2">
       <!-- Copy -->
@@ -23,7 +23,7 @@
 
   <!-- Phone -->
   <div class="mb-2 flex items-center justify-between">
-    <p>###-###-###</p>
+    <p class="font-normal text-gray-700 overflow-hidden w-auto rounded-md bg-gray-200 px-2 mr-3">###-###-###</p>
 
     <div class="flex space-x-2">
       <!-- Copy -->
