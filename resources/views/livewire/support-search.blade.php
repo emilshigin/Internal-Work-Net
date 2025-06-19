@@ -5,7 +5,7 @@
 <div class=" h-full flex flex-col ">
     <x-input name='Name | Serial Number | Email | Phone' showLabel='false' isLiveSearch='true' />
     
-    <ul class="mt-2 flex-1 overflow-y-auto outline-1 -outline-offset-1 outline-gray-300 bg-white rounded-md">
+    <ul class="mt-2 flex-1 overflow-y-auto  outline-gray-300 bg-white rounded-outline">
         @foreach($buyers as $buyer)
             <li  
                 wire:key="buyer-{{ $buyer->id }}" 
