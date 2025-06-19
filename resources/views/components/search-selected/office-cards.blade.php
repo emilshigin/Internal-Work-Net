@@ -2,9 +2,9 @@
 
 @foreach($officesWithSerials as $office => $serials)
   <div class="block w-72  bg-white p-6 rounded-outline">
-    <h3 class="mb-2 text-center text-2xl font-bold tracking-tight text-black">{{  $office }}</h3>
+    <h3 class="mb-2 text-center text-2xl font-bold tracking-tight text-black hover:text-sky-700 hover:underline">{{  $office }}</h3>
 
-          <!-- Email -->
+    <!-- Email -->
     <div class="mb-2 flex items-center justify-between h-10">
       <p class="font-normal bg-gray-200 text-gray-700 overflow-hidden w-auto px-2 mr-3 rounded-outline">email@email.comvxvxcvxcxvxvxv</p>
 
