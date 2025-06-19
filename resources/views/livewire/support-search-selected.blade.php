@@ -3,7 +3,7 @@
 
 @endphp
 
-<div class="bg-white h-12/12 py-2 px-3 block rounded-outline ">
+<div class="bg-white h-12/12 py-2 px-3 block rounded-outline overflow-y-auto ">
     @if($selectedId)
        
         <x-search-selected.buyer-section :buyer="$buyer" />
