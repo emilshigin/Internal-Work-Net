@@ -1,24 +1,13 @@
 @props(['officesWithSerials'])
 
-<div>
-    @if($officesWithSerials)
-            @foreach($officesWithSerials as $office => $serials)
-                <div class="mt-4">
-                    <h3 class="font-bold">{{  $office }}</h3>
 
-                    @if($serials)
-                        <ul class="ml-4 list-disc">
-                            @foreach($serials as $sn)
-                                <li>SN: {{ $sn }}</li>
-                            @endforeach
-                        </ul>
-                    @else
-                        <p class="ml-4 text-gray-500">Office Has No Devices Attached</p>
-                    @endif
-                </div>
-            @endforeach
+<div class=" text-3xl mt-3">Offices</div>
+<hr/>
+    <div class="flex gap-3">
+    @if($officesWithSerials)
+            <x-search-selected.office-cards :officesWithSerials="$officesWithSerials" />
         @else
             <p class="text-gray-500">No offices found.</p>
         @endif
-
-</div>
+    </div>
+<hr/>
