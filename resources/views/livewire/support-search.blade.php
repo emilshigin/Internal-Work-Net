@@ -3,8 +3,12 @@
 @endphp
 
 <div class=" h-full flex flex-col ">
-    <x-input name='Name | Serial Number | Email | Phone' showLabel='false' isLiveSearch='true' />
-    
+    <x-input 
+            name='Name | SN | Email | Phone' 
+            showLabel='false' 
+            isLiveSearch='true' 
+            />
+
     <ul class="mt-2 flex-1 overflow-y-auto  outline-gray-300 bg-white rounded-outline">
         @foreach($buyers as $buyer)
             <li  
