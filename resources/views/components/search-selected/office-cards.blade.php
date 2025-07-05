@@ -9,20 +9,28 @@
     @endphp
     <!-- Email -->
     <div class="mb-2 flex items-center justify-between h-10">
-      <p class="font-normal bg-gray-200 text-gray-700 overflow-hidden w-auto px-2 mr-3 rounded-outline">email@email.comvxvxcvxcxvxvxv</p>
+      <p 
+        id="{{$Office}}-email-copy" 
+        onclick="copyToClipboard('{{$Office}}-email-copy')"  
+        class="font-normal bg-gray-200 text-gray-700 overflow-hidden w-auto px-2 mr-3 rounded-outline cursor-pointer ">
+        test@test.testing.test.com
+      </p>
 
       <div class="flex space-x-2">
-        <x-ui.copy-icon/><!-- Copy -->
         <x-ui.edit-icon/><!-- Edit -->
       </div>
     </div>
 
     <!-- Phone -->
     <div class="mb-2 flex items-center justify-between">
-      <p class="font-normal bg-gray-200 text-gray-700 overflow-hidden w-auto px-2 mr-3 rounded-outline">###-###-###</p>
+      <p 
+        id="{{$Office}}-phone-copy" 
+        onclick="copyToClipboard('{{$Office}}-phone-copy')" 
+        class="font-normal bg-gray-200 text-gray-700 overflow-hidden w-auto px-2 mr-3 rounded-outline cursor-pointer ">
+        ###-###-###
+      </p>
 
       <div class="flex space-x-2">
-        <x-ui.copy-icon/><!-- Copy -->
         <x-ui.edit-icon/><!-- Edit -->
       </div>
     </div>
