@@ -1,6 +1,8 @@
 @import 'tailwindcss';
-
 @import "tw-animate-css";
+
+@import './animations.css';
+
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -191,7 +193,7 @@
 soft blue:    blue-50
 dark blue:    sky-700
 
-soft yellow:  amber-200
+soft yellow:  amber-200 #fee685
 
 soft gray:    gray-200
 mild gray:    gray-400
