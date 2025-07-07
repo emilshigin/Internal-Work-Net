@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('buyers', function (Blueprint $table) {
+        Schema::create('contact_phone', function (Blueprint $table) {
             $table->id();
+            $table->string('phone_number');
             $table->string('name');
-            $table->softDeletes();
+            $table->morphs('contact'); // makes contact_id | contact_type
+            $table->boolean('is_primary')->default('true'); //1 yes 0 no
+            $table->integer('is_contactable')->default('false'); //1 yes 0 no
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('buyers');
+        Schema::dropIfExists('contact_phone');
     }
 };

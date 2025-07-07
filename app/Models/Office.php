@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Office extends Model
 {
+    protected $fillable = ['office_name'];
+
     public function buyer()
     {
         return $this->belongsTo(Buyer::class);
@@ -16,4 +18,13 @@ class Office extends Model
         return $this->hasMany(ProductUnit::class, 'current_office_id');
     }
     
+    public function contactEmails()
+    {
+        return $this->morphMany(ContactEmail::class, 'contact');
+    }
+
+    public function contactPhones()
+    {
+        return $this->morphMany(ContactPhone::class, 'contact');
+    }
 }
