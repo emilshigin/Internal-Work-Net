@@ -14,15 +14,14 @@ class OfficeSeeder extends Seeder
      */
     public function run(): void
     {
-         // Delete existing buyers to reset ID counter
-        // Avoid in production
-        Office::truncate();
+        $count = 350;
+        $chunkSize = 100;
 
-        // Create your company first
-        Office::create([
-            'buyer_id' => 1,
-            'office_name' => 'Test Office 2',
-            // Add other fields here
-        ]);
+        $office = OfficeFactory::new()->count($count)->make();
+        foreach($office->chunk($chunkSize) as $chunk){
+            $data = $chunk->toArray();
+            Office::insert($data);
+        }
+
     }
 }

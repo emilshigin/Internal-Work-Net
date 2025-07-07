@@ -13,6 +13,9 @@ class ProductUnitSeeder extends Seeder
      */
     public function run(): void
     {
+        fake()->unique(true);
+        $count = 600;
+        ProductUnit::factory()->count($count)->create();
 
     }
 }
