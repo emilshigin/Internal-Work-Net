@@ -21,6 +21,9 @@ class DatabaseSeeder extends Seeder
             OfficeSeeder::class,
             ProductSeeder::class,
             ProductUnitSeeder::class,
+            AddressSeeder::class,
+            EmailSeeder::class,
+            PhoneSeeder::class,
         ]);
 
          User::factory()->create([
