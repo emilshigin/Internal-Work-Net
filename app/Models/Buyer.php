@@ -23,6 +23,12 @@ class Buyer extends Model
     {
         return $this->morphMany(ContactPhone::class, 'contact');
     }
+
+    public function contactAddresses()
+    {
+        return $this->morphMany(ContactAddress::class, 'contact');
+    }
+
     
     // when buyer_id is deleted 
     public static function booted()
