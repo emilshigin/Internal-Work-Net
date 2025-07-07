@@ -14,19 +14,18 @@ class BuyerSeeder extends Seeder
      */
     public function run(): void
     {   
-        $count = 200; // Number of users to create
-        $chunkSize = 100; // Chunk size for inserting records
-        $now = now();
 
-        $buyers = Buyer::factory()->count($count)->make()->map(function ($buyer) use ($now) {
-            $arr = $buyer->toArray();
-            $arr['created_at'] = $now;
-            $arr['updated_at'] = $now;
-            return $arr;
-        });
+        // Delete existing buyers to reset ID counter
+        // Avoid in production
+        Buyer::truncate();
 
-        foreach ($buyers->chunk($chunkSize) as $chunk) {
-            Buyer::insert($chunk->toArray());
-        }
+        // Create your company first
+        Buyer::create([
+            'name' => 'Micro Medical Device',
+            'email' => 'support@micromedinc.com',
+            'phone' => '(818)-222-3310'
+            // Add other fields here
+        ]);
+
     }
 }
