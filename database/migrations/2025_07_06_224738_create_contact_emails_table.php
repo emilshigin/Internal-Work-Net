@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('email'); 
             $table->string('name'); // name for email
             $table->morphs('contact'); // makes contact_id | contact_type
-            $table->boolean('is_primary')->default('true'); //1 yes 0 no
-            $table->integer('is_contactable')->default('false'); //1 yes 0 no
+            $table->boolean('is_primary')->default(true); //1 yes 0 no
+            $table->boolean('is_contactable')->default(false); //1 yes 0 no
             $table->timestamps();
         });
     }
