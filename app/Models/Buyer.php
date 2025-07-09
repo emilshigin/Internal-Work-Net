@@ -29,6 +29,21 @@ class Buyer extends Model
         return $this->morphMany(ContactAddress::class, 'contact');
     }
 
+
+    // Primery contact info
+    public function getPrimaryEmailAttribute()
+{
+    return $this->contactEmails->where('is_primary', true)->first()?->email 
+        ?? $this->contactEmails->first()?->email;
+}
+
+// Primary phone accessor
+public function getPrimaryPhoneAttribute()
+{
+    return $this->contactPhones->where('is_primary', true)->first()?->phone_number 
+        ?? $this->contactPhones->first()?->number;
+}
+
     
     // when buyer_id is deleted 
     public static function booted()
