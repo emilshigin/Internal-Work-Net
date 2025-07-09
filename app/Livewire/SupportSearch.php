@@ -3,6 +3,8 @@
 namespace App\Livewire;
 
 use App\Models\Buyer;
+use App\Models\ContactEmail;
+use App\Models\ContactPhone;
 use App\Models\Office;
 use App\Models\ProductUnit;
 use Livewire\Component;
