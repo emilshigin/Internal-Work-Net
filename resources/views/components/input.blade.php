@@ -18,10 +18,11 @@
     @if ($isRequired) required @endif 
     placeholder='{{ucfirst($name)}}' 
     class="
-        block w-full 
-        rounded-md px-3 py-1.5
+        block w-full
+        rounded-outline
+        px-3 py-1.5
         bg-white 
-        text-gray-900 outline-1 -outline-offset-1 outline-gray-300 
+        text-gray-900  
         placeholder:text-gray-400 focus:outline-2 
         focus:outline-offset-2 focus:outline-sky-700
     "/>
