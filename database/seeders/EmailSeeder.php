@@ -25,6 +25,16 @@ class EmailSeeder extends Seeder
             'name' => 'Support',
             'is_primary' => true,
             'is_contactable' =>  false,
+        ]);   
+        
+        ContactEmail::create([
+            'contact_type' => 'App\Models\Buyer',
+            'contact_id' => 1,
+            
+            'email' => 'emilshigin@micromedinc.com',
+            'name' => 'Support',
+            'is_primary' => false,
+            'is_contactable' =>  false,
         ]);    
     }
 }
