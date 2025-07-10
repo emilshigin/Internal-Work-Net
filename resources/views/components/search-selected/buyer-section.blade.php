@@ -1,45 +1,72 @@
 @props(['buyer'])
 
-<div class=" text-3xl mt-3">Buyer</div>
+<div class=" inline-block text-3xl font-bold mt-3">Buyer</div>
 <hr />
-<div>
+<h2 class="text-lg font-bold">{{ $buyer->name }}</h2>
+<div class="flex flex-col md:flex-row">
     @if($buyer)
-    <h2 class="text-lg font-bold">{{ $buyer->name }}</h2>
-        @foreach ($buyer->contactEmails as $key=>$email)
-        <div class="flex items-center gap-1 py-1" >
-            Email: 
-            <p  
-                id="{{$email->email}}-{{$key}}"
-                onclick="copyToClipboard('{{$email->email}}-{{$key}}')" 
-                class="font-normal bg-gray-200 text-gray-700 overflow-hidden w-auto px-2 mr-3 rounded-outline cursor-pointer ">
-                    {{ $email->email }} 
-                </p>
-                @if($email->is_primary)
-                    <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
-                @endif
+    <div class="items-center gap-1 py-1 " >
+        
+        <div class="px-3">
+            <span class="font-medium">Email:</span>
+            @forelse ($buyer->contactEmails as $key=>$email)
+                <div class="flex items-center gap-1 py-1.5">
+                    
+                    <x-ui.display-info id="{{$email->email}}-{{$key}}" text="{{$email->email}}"/>
 
-                @unless($email->is_contactable)
+                    @if($email->is_primary)
+                    <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
+                    @endif
+                    
+                    @unless($email->is_contactable)
                     <x-ui.tooltip-icon symbol="N" tooltip_text="(Do Not Use)" />
-                @endunless
+                    @endunless
+                </div>
+            @empty
+                <p class="text-sm text-gray-500 italic">No Email  available</p>
+            @endforelse
+            </div>
         </div>
 
-        @endforeach
 
-        @foreach ( $buyer->contactPhones as $phone )
-        <div class="flex items-center gap-1">
+        <div class="px-3">
+            <span class="font-medium">Phone:</span>
+            @forelse ( $buyer->contactPhones as $key=>$phone )
+                <div class="flex items-center gap-1 ">
+                    <x-ui.display-info id="{{$phone->phone_number}}-{{$key}}" text="{{$phone->phone_number}}"/>
+                    
+                    @if($phone->is_primary)
+                        <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
+                    @endif
 
-            <p>Phone: {{ $phone->phone_number }} </p>
-            @if($phone->is_primary)
-                <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
-            @endif
-
-            @unless($phone->is_contactable)
-                <x-ui.tooltip-icon symbol="N" tooltip_text="(Do Not Use)" />
-            @endunless
+                    @unless($phone->is_contactable)
+                        <x-ui.tooltip-icon symbol="N" tooltip_text="(Do Not Use)" />
+                    @endunless
+                </div>
+            @empty
+                <p class="text-sm text-gray-500 italic">No Phone numbers available</p>
+            @endforelse
         </div>
                     
-   
-        @endforeach
+        <div class="px-3">
+            <span class="font-medium">Address:</span>
+            {{-- @forelse (  ) --}}
+                <div class="flex items-center gap-1 ">
+
+                    <x-ui.display-info text="23945 Calabasas Rd #110, Calabasas, CA 91302"/> 
+                    
+                    @if($phone->is_primary)
+                        <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
+                    @endif
+
+                    @unless($phone->is_contactable)
+                        <x-ui.tooltip-icon symbol="N" tooltip_text="(Do Not Use)" />
+                    @endunless
+                </div>
+            {{-- @empty
+                <p class="text-sm text-gray-500 italic">No Phone numbers available</p>
+            @endforelse --}}
+        </div>
 
     @endif
 </div>
