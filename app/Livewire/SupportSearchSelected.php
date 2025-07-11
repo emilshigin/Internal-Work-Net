@@ -18,7 +18,7 @@ class SupportSearchSelected extends Component
     public $officesWithSerials = [];
 
 
-    public function selectedData($id)
+    public function selectedData($buyerId)
     {   
         $this->isSelected = true;
         $this->buyer = Buyer::with('offices.productUnits')->find($buyerId);
