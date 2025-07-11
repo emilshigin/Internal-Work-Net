@@ -20,8 +20,8 @@ class SupportSearchSelected extends Component
 
     public function selectedData($id)
     {   
-        $this->selectedId = true;
-        $this->buyer = Buyer::with('offices.productUnits')->find($id);
+        $this->isSelected = true;
+        $this->buyer = Buyer::with('offices.productUnits')->find($buyerId);
 
         $this->officesWithSerials = $this->buyer->offices
             ->groupBy('office_name')
