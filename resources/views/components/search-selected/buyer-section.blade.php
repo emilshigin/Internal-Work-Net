@@ -50,22 +50,24 @@
                     
         <div class="px-3">
             <span class="font-medium">Address:</span>
-            {{-- @forelse (  ) --}}
+            @forelse ( $buyer->contactAddresses as $key=>$address )
                 <div class="flex items-center gap-1 ">
-
-                    <x-ui.display-info text="23945 Calabasas Rd #110, Calabasas, CA 91302"/> 
+                    @php
+                        $full_address = "$address->address_line_1 $address->address_line_2 $address->city $address->state $address->postal_code $address->country" 
+                    @endphp
+                    <x-ui.display-info text="{{$full_address}}" id='address-{{$key}}'/>
                     
-                    @if($phone->is_primary)
+                    @if($address->is_primary)
                         <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
                     @endif
 
-                    @unless($phone->is_contactable)
+                    @unless($address->is_contactable)
                         <x-ui.tooltip-icon symbol="N" tooltip_text="(Do Not Use)" />
                     @endunless
                 </div>
-            {{-- @empty
-                <p class="text-sm text-gray-500 italic">No Phone numbers available</p>
-            @endforelse --}}
+            @empty
+                <p class="text-sm text-gray-500 italic">No Addresses available</p>
+            @endforelse
         </div>
 
     @endif
