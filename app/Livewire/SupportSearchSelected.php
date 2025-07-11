@@ -23,13 +23,19 @@ class SupportSearchSelected extends Component
         $this->isSelected = true;
         $this->buyer = Buyer::with('offices.productUnits')->find($buyerId);
 
-        $this->officesWithSerials = $this->buyer->offices
-            ->groupBy('office_name')
-            ->map(function ($offices){
-                return $offices->flatMap->productUnits
+        // return early     
+        if (!$this->buyer) {
+            $this->serialsByOffice = [];
+            return;
+        }
+
+        $this->serialsByOffice = $this->buyer->offices->map(function ($office){
+                $serials = $office->productUnits
                     ->pluck('serial_number')
                     ->unique()
                     ->values();
+
+                    return ['office' => $office,'serials' => $serials];
             })
             ->toArray();
     }
