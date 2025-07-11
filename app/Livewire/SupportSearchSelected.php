@@ -15,7 +15,7 @@ class SupportSearchSelected extends Component
     public $isSelected = false;
 
     protected $listeners = ['selectedData'];
-    public $officesWithSerials = [];
+    public $serialsByOffice = [];
 
 
     public function selectedData($buyerId)
