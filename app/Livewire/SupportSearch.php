@@ -15,11 +15,11 @@ class SupportSearch extends Component
     public $selectedId = null;
     public $buyer = null;
 
-    public function select($id)
+    public function select($buyerId)
     {   
-        $this->selectedId = $id;
-        $this->buyer = Buyer::with('offices')->find($id);
-        $this->dispatch('selectedData',$id);
+        $this->selectedId = $buyerId;
+        $this->buyer = Buyer::with('offices')->find($buyerId); // finds buyer and the associated office
+        $this->dispatch('selectedData',$buyerId);
     }
 
  

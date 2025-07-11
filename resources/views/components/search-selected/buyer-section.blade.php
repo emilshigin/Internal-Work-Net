@@ -12,7 +12,7 @@
             @forelse ($buyer->contactEmails as $key=>$email)
                 <div class="flex items-center gap-1 py-1.5">
                     
-                    <x-ui.display-info id="{{$email->email}}-{{$key}}" text="{{$email->email}}"/>
+                    <x-ui.display-info id="buyer-email-{{$key}}" text="{$email->email}}"/>
 
                     @if($email->is_primary)
                     <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
@@ -33,7 +33,7 @@
             <span class="font-medium">Phone:</span>
             @forelse ( $buyer->contactPhones as $key=>$phone )
                 <div class="flex items-center gap-1 ">
-                    <x-ui.display-info id="{{$phone->phone_number}}-{{$key}}" text="{{$phone->phone_number}}"/>
+                    <x-ui.display-info id="buyer-phone-{{$key}}" text="{{$phone->phone_number}}"/>
                     
                     @if($phone->is_primary)
                         <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
@@ -55,7 +55,7 @@
                     @php
                         $full_address = "$address->address_line_1 $address->address_line_2 $address->city $address->state $address->postal_code $address->country" 
                     @endphp
-                    <x-ui.display-info text="{{$full_address}}" id='address-{{$key}}'/>
+                    <x-ui.display-info text="{{$full_address}}" id='buyer-address-{{$key}}'/>
                     
                     @if($address->is_primary)
                         <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
