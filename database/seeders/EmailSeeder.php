@@ -33,8 +33,8 @@ class EmailSeeder extends Seeder
             
             'email' => 'emilshigin@micromedinc.com',
             'name' => 'Support',
-            'is_primary' => false,
-            'is_contactable' =>  false,
+            'is_primary' => true,
+            'is_contactable' =>  true,
         ]);    
     }
 }

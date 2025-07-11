@@ -29,7 +29,7 @@ class AddressSeeder extends Seeder
             'postal_code' => '91302',
             'country' => 'US',
             'is_primary' => true,
-            'is_contactable' => false,
+            'is_contactable' => true,
         
 
         ]);
