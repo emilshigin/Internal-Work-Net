@@ -1,4 +1,5 @@
-@props(['officesWithSerials'])
+@props(['serialsByOffice'])
+
 
 @foreach($officesWithSerials as $office => $serials)
   <div class="block w-72  bg-white p-6 rounded-outline">
