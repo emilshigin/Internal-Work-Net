@@ -32,17 +32,17 @@ class Buyer extends Model
 
     // Primery contact info
     public function getPrimaryEmailAttribute()
-{
-    return $this->contactEmails->where('is_primary', true)->first()?->email 
-        ?? $this->contactEmails->first()?->email;
-}
+    {
+        return $this->contactEmails->where('is_primary', true)->first()?->email 
+            ?? $this->contactEmails->first()?->email;
+    }
 
-// Primary phone accessor
-public function getPrimaryPhoneAttribute()
-{
-    return $this->contactPhones->where('is_primary', true)->first()?->phone_number 
-        ?? $this->contactPhones->first()?->number;
-}
+    // Primary phone accessor
+    public function getPrimaryPhoneAttribute()
+    {
+        return $this->contactPhones->where('is_primary', true)->first()?->phone_number 
+            ?? $this->contactPhones->first()?->number;
+    }
 
     
     // when buyer_id is deleted 
