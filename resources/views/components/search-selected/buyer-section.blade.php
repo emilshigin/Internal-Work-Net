@@ -12,7 +12,7 @@
             @forelse ($buyer->contactEmails as $key=>$email)
                 <div class="flex items-center gap-1 py-1.5">
                     
-                    <x-ui.display-info id="buyer-email-{{$key}}" text="{$email->email}}"/>
+                    <x-ui.display-info id="buyer-email-{{$key}}" text="{{$email->email}}"/>
 
                     @if($email->is_primary)
                     <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
