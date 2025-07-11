@@ -12,7 +12,7 @@ class SupportSearchSelected extends Component
 {
 
     public $buyer;
-    public $selectedId = null;
+    public $isSelected = false;
 
     protected $listeners = ['selectedData'];
     public $officesWithSerials = [];
