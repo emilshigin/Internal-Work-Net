@@ -21,10 +21,6 @@
       @else
         <x-ui.display-info text="No Primary Email Found"/>
       @endif
-
-      <div class="flex space-x-2">
-        <x-ui.edit-icon/><!-- Edit -->
-      </div>
     </div>
 
     <!-- Phone -->
@@ -34,10 +30,6 @@
       @else
         <x-ui.display-info text="No Primary Phone Found"/>
       @endif
-
-      <div class="flex space-x-2">
-        <x-ui.edit-icon/><!-- Edit -->
-      </div>
     </div>
 
     {{-- Serial Numbers --}}

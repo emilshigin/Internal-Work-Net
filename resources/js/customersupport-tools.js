@@ -21,4 +21,19 @@ function copyToClipboard(id){
     }
 }
 
+function enableBuyerEdit() {
+        // Toggle display/input
+        console.log('pressed enableBuyerEdit');
+        document.getElementById('buyer-name-display').classList.add('hidden');
+        document.getElementById('buyer-name-input').classList.remove('hidden');
+
+        // Toggle buttons
+        document.getElementById('edit-buyer-btn').classList.add('hidden');
+        document.getElementById('save-buyer-btn').classList.remove('hidden');
+    }
+
+
+
+// Allow Each Function To be Global
 window.copyToClipboard = copyToClipboard;
+window.enableBuyerEdit = enableBuyerEdit;
