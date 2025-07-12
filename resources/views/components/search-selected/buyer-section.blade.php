@@ -4,20 +4,11 @@
     @csrf
     @method('PUT')
 
-    <div class=" flex flex-row gap-3  text-3xl font-bold mt-3">
+    <div class=" flex flex-row gap-4  text-3xl font-bold mt-3">
         Buyer
 
-        {{-- Edit --}}
-        <button type="button" id="edit-buyer-btn" onclick="enableBuyerEdit()" class="ml-2 text-green-600 font-semibold border px-3 py-1 rounded">
-            {{-- <x-ui.edit-icon width='32' height='32' /> --}}
-            Edit
-        </button>
-
-        {{-- Save Defualt Hidden --}}
-        <button type="submit" id="save-buyer-btn"
-                class="hidden text-green-600 font-semibold border px-3 py-1 rounded">
-            Save
-        </button>
+        <x-button type="button" id="edit-buyer-btn" onclick="enableBuyerEdit()" text="Edit" />
+        <x-button type="submit" id="save-buyer-btn" onclick="enableBuyerEdit()" text="Save" buttonClass="hidden" />
 
     </div>
 
