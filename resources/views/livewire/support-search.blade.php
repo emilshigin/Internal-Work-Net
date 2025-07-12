@@ -98,10 +98,10 @@
             @endphp
 
             <li
-                wire:click="{{ $isBuyer ? "select({$contact->id})" : '' }}"
+                wire:click="select({{$number->contact_id}})"
                 class="
                     p-1 mt-0.5 hover:bg-gray-200
-                    {{ $isBuyer && $selectedId === $contact->id ? ' bg-amber-200 border-accent' : 'bg-white' }}
+                    {{ $selectedId === $number->contact_id ? ' bg-amber-200 border-accent' : 'bg-white' }}
                     ">
                 <b>
                     {{ $isBuyer ? $contact->name : ($isOffice ? $contact->office_name : 'Unknown') }}
