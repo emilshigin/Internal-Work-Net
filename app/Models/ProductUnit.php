@@ -9,7 +9,9 @@ class ProductUnit extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'products_id','serial_number', 'current_office_id'];
+    protected $fillable = [ 'product_id','serial_number', 'current_office_id'];
+    // \App\Models\Office::find(1)->productUnits()->create(['product_id' => 5,'serial_number' => '50338','current_office_id' => 1]);
+
 
         public function product()
     {
