@@ -4,11 +4,13 @@
     @csrf
     @method('PUT')
 
-    <div class=" flex flex-row gap-4  text-3xl font-bold mt-3">
+    <div class=" flex flex-row gap-4  text-3xl font-bold mt-1 items-center">
         Buyer
 
-        <x-button type="button" id="edit-buyer-btn" onclick="enableBuyerEdit()" text="Edit" />
-        <x-button type="submit" id="save-buyer-btn" onclick="enableBuyerEdit()" text="Save" buttonClass="hidden" />
+        <div class="">
+            <x-button type="button" id="edit-buyer-btn" onclick="enableBuyerEdit()" text="Edit" buttonClass="h-7" />
+            <x-button type="submit" id="save-buyer-btn" onclick="enableBuyerEdit()" text="Save" buttonClass="hidden h-7" />
+        </div>
 
     </div>
 
