@@ -17,10 +17,8 @@
     <hr />
     
     <div class="px-3 mt-2">
-        <h2 id="buyer-name-display" class="text-lg font-bold">{{ $buyer->name }}</h2>
-        <input type="text" name="name" id="buyer-name-input"
-               class="hidden border px-2 py-1 rounded text-lg font-bold"
-               value="{{ $buyer->name }}" />
+        <h2 id="buyer-name-display" class=" px-1 text-lg font-bold">{{ $buyer->name }}</h2>
+        <x-ui.input-info type="text" id="buyer-name-input" name="name" value="{{ $buyer->name }}" inputClass='px-1 text-lg font-bold rounded-outline hidden'/>
     </div>
 
     <div class="flex flex-col md:flex-row">
@@ -33,11 +31,11 @@
                         <x-ui.display-info id="buyer-email-{{$key}}" text="{{$email->email}}"/>
 
                         @if($email->is_primary)
-                        <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
+                            <x-ui.tooltip-icon symbol="P" tooltip_text="Primary" />
                         @endif
                         
                         @unless($email->is_contactable)
-                        <x-ui.tooltip-icon symbol="N" tooltip_text="(Do Not Use)" />
+                            <x-ui.tooltip-icon symbol="N" tooltip_text="(Do Not Use)" />
                         @endunless
                     </div>
                 @empty
