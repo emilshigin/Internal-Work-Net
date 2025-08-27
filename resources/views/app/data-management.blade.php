@@ -5,7 +5,7 @@
  <div class="mb-6 w-min border rounded-lg shadow">
     <button
         onclick="toggleSection('productsTable')"
-        class="w-full whitespace-nowrap px-6 py-2 bg-blue-500 text-white font-semibold rounded-t-lg" >
+        class="w-full whitespace-nowrap px-6 py-2 bg-sky-700 text-white font-semibold rounded-t-lg" >
         Products ({{ $products->count() }})
     </button>
 

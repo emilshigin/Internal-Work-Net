@@ -21,13 +21,16 @@ class DatabaseSeeder extends Seeder
             OfficeSeeder::class,
             ProductSeeder::class,
             ProductUnitSeeder::class,
+            AddressSeeder::class,
+            EmailSeeder::class,
+            PhoneSeeder::class,
         ]);
 
-        //  User::factory()->create([
-        //     'name' => 'ADMIN',
-        //     'username' => 'admin',
-        //     'email' => 'admin@micromedinc.com',
-        //     'password' => 'admin!?'
-        // ]);
+         User::factory()->create([
+            'name' => 'ADMIN',
+            'username' => 'admin',
+            'email' => 'admin@micromedinc.com',
+            'password' => 'admin!?'
+        ]);
     }
 }

@@ -1,5 +1,6 @@
 <x-app-layout tabTitle='dashboard' bodyClass=''>
     <div>
-        hello {{ Auth::user()->name }}   
+        Hello {{ Auth::user()->name }}
+        <x-empty-section />
     </div>
 </x-app-layout>

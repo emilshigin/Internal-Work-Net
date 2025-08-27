@@ -47,3 +47,11 @@ Route::middleware(['auth'])->group(function () {
         return redirect('/');
     })->name('logout');
 });
+
+
+Route::put('/buyers/{buyer}', [CustomerSupportController::class, 'update'])->name('buyers.update');
+
+
+
+
+

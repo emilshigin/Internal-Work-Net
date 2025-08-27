@@ -2,22 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
-{
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
+{   
+    use HasFactory;
 
-    public function currentOffice()
-    {
-        return $this->belongsTo(Office::class, 'current_office_id');
-    }
+    protected $fillable = ['name'];
 
-    public function histories()
+    public function units()
     {
-        return $this->hasMany(ProductHistory::class);
+        return $this->hasMany(ProductUnit::class);
     }
 }

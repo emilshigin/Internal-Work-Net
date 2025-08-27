@@ -1,6 +1,8 @@
 @import 'tailwindcss';
-
 @import "tw-animate-css";
+
+@import './animations.css';
+
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -185,3 +187,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Colors */
+/* 
+soft blue:    blue-50
+dark blue:    sky-700
+
+soft yellow:  amber-200 #fee685
+
+soft gray:    gray-200
+mild gray:    gray-400
+dark gray:    gray-700
+*/
+
+/* Custom Classes */
+.rounded-outline{
+  @apply rounded-md;
+  @apply outline-1;
+  @apply -outline-offset-1;
+  @apply outline-gray-400;
+}
+
+hr{
+  @apply mt-1;
+  @apply mb-1;
+}
+

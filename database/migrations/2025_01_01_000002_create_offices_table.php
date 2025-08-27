@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('office', function (Blueprint $table) {
+        Schema::create('offices', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('buyer')->constrained('buyer')->onDelete('set null');
-            $table->string('Office Name')->unique();
+            $table->foreignId('buyer_id')->default(1)->nullable()->constrained('buyers')->onDelete('set null');
+            $table->string('office_name')->unique();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('office');
+        Schema::dropIfExists('offices');
     }
 };

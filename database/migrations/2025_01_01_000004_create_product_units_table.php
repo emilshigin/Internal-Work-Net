@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('product_units', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('products_id')->constrained()->onDelete('restrict');
-            $table->string('Serial Number')->unique();
-            $table->foreignId('current_office_id')->nullable()->constrained('office')->onDelete('set null');
+            $table->foreignId('product_id')->constrained()->onDelete('restrict');
+            $table->string('serial_number')->unique();
+            $table->foreignId('current_office_id')->nullable()->constrained('offices')->onDelete('set null');
             $table->timestamps();
         });
     }

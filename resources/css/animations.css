@@ -1,0 +1,25 @@
+@layer utilities {
+
+    @keyframes pulse {
+    0% {
+        background-color: transparent;
+        transform: scale(1);
+    }
+    50% {
+        background-color: #fee685;
+        transform: scale(1.1); /* slight scale for effect */
+    }
+    100% {
+        background-color: transparent;
+        transform: scale(1);
+    }
+    }
+
+    .pulse {
+        animation: pulse 1s ;
+        animation-fill-mode: forwards;
+        will-change: background-color, transform;
+    }
+
+
+}

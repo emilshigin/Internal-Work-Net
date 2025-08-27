@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class form-error extends Component
+class EmptySection extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class form-error extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.form-error');
+        return view('components.empty-section');
     }
 }
