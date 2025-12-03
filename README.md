@@ -1,3 +1,11 @@
+# Purpose
+This application is designed to track customer information and life cycle of products
+
+# Features
+* Livewire empowers Real-Time search across buyers,offices,product serial number,emails, and phone numbers.
+* Tracking products
+* Manageing Monitoring Offices
+
 # Run Application
 1. Setup Environment
 2. Turn On Herd (runs the website)
