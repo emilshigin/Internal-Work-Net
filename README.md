@@ -6,6 +6,12 @@ This application is designed to track customer information and life cycle of pro
 * Tracking products
 * Manageing Monitoring Offices
 
+# Technology Stack
+* Backend: Laravel 12.0 (PHP 8.2+)
+* Frontend: Livewire 3.6 + Vue.js 3.5 + Tailwind CSS
+* Database: SQLite (dev environment)
+* Build: Vite
+
 # Run Application
 1. Setup Environment
 2. Turn On Herd (runs the website)
